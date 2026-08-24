@@ -9,6 +9,7 @@ A basic ranking website launch page with a countdown timer to December 11, 2026.
 - Email subscription form for notifications
 - Professional gradient background
 - Mobile-friendly layout
+- TR logo with navigation buttons (Home, About, Contact, Ranking Methodology)
 
 ## Files
 
