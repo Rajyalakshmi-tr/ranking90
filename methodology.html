@@ -7,124 +7,108 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <div class="tr-logo">TR</div>
-            <span class="logo-text">World University Ranking</span>
-        </div>
-        <nav class="nav">
-            <a href="index.html" class="nav-btn">Home</a>
-            <a href="about.html" class="nav-btn">About</a>
-            <a href="rankings.html" class="nav-btn">Rankings</a>
-            <a href="methodology.html" class="nav-btn active">Methodology</a>
-            <a href="contact.html" class="nav-btn">Contact</a>
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-logo">TR</span>
+            <span class="brand-name">World University<br>Ranking</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="rankings.html" class="nav-link">Rankings</a>
+            <a href="methodology.html" class="nav-link active">Methodology</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
     </header>
-    <div class="container">
-        <div class="content">
-            <h1 class="page-title">Ranking Methodology</h1>
-            
-            <div class="methodology-intro">
-                <p>Our comprehensive ranking methodology evaluates universities across multiple key indicators to provide a fair and accurate assessment of institutional performance.</p>
-            </div>
+    <main class="hero">
+        <h1>Ranking Methodology</h1>
 
-            <div class="methodology-section">
-                <h2>Overview</h2>
-                <p>TR World University Ranking uses a weighted scoring system that combines quantitative data and qualitative assessments from academic experts, employers, and institutional representatives. Our methodology is designed to be transparent, reproducible, and globally applicable.</p>
-            </div>
+        <p class="hero-description">
+            Our comprehensive ranking methodology evaluates universities across multiple key indicators to provide a fair and accurate assessment of institutional performance.
+        </p>
 
-            <div class="methodology-section">
-                <h2>Key Indicators (100% Total)</h2>
-                
-                <div class="indicator-item">
-                    <div class="indicator-header">
-                        <h3>Academic Reputation (30%)</h3>
-                        <span class="indicator-weight">30%</span>
-                    </div>
-                    <p>Based on global survey responses from academics who are asked to identify the best institutions in their field of expertise.</p>
-                </div>
+        <section class="features-grid" aria-label="Key indicators">
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">30%</div>
+                <h3>Academic Reputation</h3>
+                <p>
+                    Based on global survey responses from academics who are asked to identify the best institutions in their field of expertise.
+                </p>
+            </article>
 
-                <div class="indicator-item">
-                    <div class="indicator-header">
-                        <h3>Employer Reputation (20%)</h3>
-                        <span class="indicator-weight">20%</span>
-                    </div>
-                    <p>Derived from global surveys of employers who identify the institutions that produce the best graduates.</p>
-                </div>
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">20%</div>
+                <h3>Employer Reputation</h3>
+                <p>
+                    Derived from global surveys of employers who identify the institutions that produce the best graduates.
+                </p>
+            </article>
 
-                <div class="indicator-item">
-                    <div class="indicator-header">
-                        <h3>Faculty Student Ratio (15%)</h3>
-                        <span class="indicator-weight">15%</span>
-                    </div>
-                    <p>Measures the teaching environment by assessing the ratio of faculty members to students.</p>
-                </div>
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">15%</div>
+                <h3>Faculty Student Ratio</h3>
+                <p>
+                    Measures the teaching environment by assessing the ratio of faculty members to students.
+                </p>
+            </article>
 
-                <div class="indicator-item">
-                    <div class="indicator-header">
-                        <h3>Citations per Faculty (20%)</h3>
-                        <span class="indicator-weight">20%</span>
-                    </div>
-                    <p>Evaluates research impact by measuring the number of citations received by faculty publications.</p>
-                </div>
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">20%</div>
+                <h3>Citations per Faculty</h3>
+                <p>
+                    Evaluates research impact by measuring the number of citations received by faculty publications.
+                </p>
+            </article>
 
-                <div class="indicator-item">
-                    <div class="indicator-header">
-                        <h3>International Faculty Ratio (5%)</h3>
-                        <span class="indicator-weight">5%</span>
-                    </div>
-                    <p>Assesses the international diversity of the faculty body.</p>
-                </div>
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">5%</div>
+                <h3>International Faculty</h3>
+                <p>
+                    Assesses the international diversity of the faculty body.
+                </p>
+            </article>
 
-                <div class="indicator-item">
-                    <div class="indicator-header">
-                        <h3>International Student Ratio (5%)</h3>
-                        <span class="indicator-weight">5%</span>
-                    </div>
-                    <p>Measures the international diversity of the student body.</p>
-                </div>
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">5%</div>
+                <h3>International Students</h3>
+                <p>
+                    Measures the international diversity of the student body.
+                </p>
+            </article>
+        </section>
 
-                <div class="indicator-item">
-                    <div class="indicator-header">
-                        <h3>International Research Network (5%)</h3>
-                        <span class="indicator-weight">5%</span>
-                    </div>
-                    <p>Evaluates the extent of international research collaboration.</p>
-                </div>
-            </div>
+        <section class="features-grid" aria-label="Additional indicator" style="margin-top: 20px;">
+            <article class="feature-card" style="grid-column: span 3;">
+                <div class="feature-icon" aria-hidden="true">5%</div>
+                <h3>International Research Network</h3>
+                <p>
+                    Evaluates the extent of international research collaboration across institutions worldwide.
+                </p>
+            </article>
+        </section>
 
-            <div class="methodology-section">
-                <h2>Data Sources</h2>
-                <ul class="data-sources-list">
-                    <li>Scopus bibliometric database for research metrics</li>
-                    <li>Global academic surveys for reputation indicators</li>
-                    <li>Institutional data submissions for faculty and student ratios</li>
-                    <li>International collaboration data from research publications</li>
-                    <li>Employer surveys for graduate employability assessment</li>
-                </ul>
-            </div>
+        <p class="hero-description" style="margin-top: 30px;">
+            <strong>Overview:</strong> TR World University Ranking uses a weighted scoring system that combines quantitative data and qualitative assessments from academic experts, employers, and institutional representatives. Our methodology is designed to be transparent, reproducible, and globally applicable.
+        </p>
 
-            <div class="methodology-section">
-                <h2>Scoring Process</h2>
-                <ol class="scoring-process">
-                    <li>Data collection from verified sources and institutional submissions</li>
-                    <li>Data validation and normalization for fair comparison</li>
-                    <li>Application of weightings to each indicator</li>
-                    <li>Calculation of overall scores and rankings</li>
-                    <li>Expert review and quality assurance</li>
-                    <li>Final ranking publication</li>
-                </ol>
-            </div>
+        <p class="hero-description">
+            <strong>Data Sources:</strong> Scopus bibliometric database for research metrics, global academic surveys for reputation indicators, institutional data submissions for faculty and student ratios, international collaboration data from research publications, and employer surveys for graduate employability assessment.
+        </p>
 
-            <div class="methodology-section">
-                <h2>Methodology Updates</h2>
-                <p>Our methodology is reviewed annually to ensure it remains relevant and reflects the evolving landscape of higher education. Changes are implemented transparently with detailed explanations provided in our annual methodology reports.</p>
-            </div>
+        <p class="hero-description">
+            <strong>Scoring Process:</strong> Data collection from verified sources and institutional submissions → Data validation and normalization for fair comparison → Application of weightings to each indicator → Calculation of overall scores and rankings → Expert review and quality assurance → Final ranking publication.
+        </p>
 
-            <div class="methodology-note">
-                <p><strong>Note:</strong> For detailed technical specifications and data access, please contact our research team through the <a href="contact.html" class="link">Contact page</a>.</p>
-            </div>
+        <p class="hero-description">
+            <strong>Methodology Updates:</strong> Our methodology is reviewed annually to ensure it remains relevant and reflects the evolving landscape of higher education. Changes are implemented transparently with detailed explanations provided in our annual methodology reports.
+        </p>
+
+        <div class="hero-actions">
+            <a href="contact.html" class="cta-primary">
+                Contact Research Team <span aria-hidden="true">→</span>
+            </a>
         </div>
-    </div>
+    </main>
 </body>
 </html>

@@ -7,106 +7,116 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <div class="tr-logo">TR</div>
-            <span class="logo-text">World University Ranking</span>
-        </div>
-        <nav class="nav">
-            <a href="index.html" class="nav-btn">Home</a>
-            <a href="about.html" class="nav-btn">About</a>
-            <a href="rankings.html" class="nav-btn active">Rankings</a>
-            <a href="methodology.html" class="nav-btn">Methodology</a>
-            <a href="contact.html" class="nav-btn">Contact</a>
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-logo">TR</span>
+            <span class="brand-name">World University<br>Ranking</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="rankings.html" class="nav-link active">Rankings</a>
+            <a href="methodology.html" class="nav-link">Methodology</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
     </header>
-    <div class="container">
-        <div class="content">
-            <h1 class="page-title">World University Rankings 2027</h1>
-            
-            <div class="ranking-intro">
-                <p>Explore the top universities worldwide based on our comprehensive evaluation methodology.</p>
-            </div>
+    <main class="hero">
+        <h1>World University Rankings 2027</h1>
 
-            <div class="ranking-table-container">
-                <table class="ranking-table">
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>University</th>
-                            <th>Country</th>
-                            <th>Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="rank-1">
-                            <td>1</td>
-                            <td>Massachusetts Institute of Technology (MIT)</td>
-                            <td>United States</td>
-                            <td>98.5</td>
-                        </tr>
-                        <tr class="rank-2">
-                            <td>2</td>
-                            <td>Stanford University</td>
-                            <td>United States</td>
-                            <td>97.2</td>
-                        </tr>
-                        <tr class="rank-3">
-                            <td>3</td>
-                            <td>Harvard University</td>
-                            <td>United States</td>
-                            <td>96.8</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>California Institute of Technology</td>
-                            <td>United States</td>
-                            <td>96.1</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>University of Oxford</td>
-                            <td>United Kingdom</td>
-                            <td>95.7</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>University of Cambridge</td>
-                            <td>United Kingdom</td>
-                            <td>95.3</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>ETH Zurich</td>
-                            <td>Switzerland</td>
-                            <td>94.8</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Imperial College London</td>
-                            <td>United Kingdom</td>
-                            <td>94.2</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>University of Chicago</td>
-                            <td>United States</td>
-                            <td>93.9</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>National University of Singapore</td>
-                            <td>Singapore</td>
-                            <td>93.5</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <p class="hero-description">
+            Explore the top universities worldwide based on our comprehensive evaluation methodology.
+        </p>
 
-            <div class="ranking-note">
-                <p><strong>Note:</strong> Rankings are updated annually. For detailed methodology, please visit our <a href="about.html" class="link">About page</a>.</p>
-            </div>
+        <form class="search-form" action="rankings.html" method="get">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+                type="search"
+                name="q"
+                placeholder="Search for universities, countries, or programs..."
+                aria-label="Search universities"
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <div style="max-width: 800px; margin: 30px auto; background: #ffffff; border: 1px solid #eeeeee; border-radius: 14px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); overflow: hidden;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: #f8f9fa; border-bottom: 2px solid #e9ecef;">
+                        <th style="padding: 15px; text-align: left; font-weight: 700; color: #202124;">Rank</th>
+                        <th style="padding: 15px; text-align: left; font-weight: 700; color: #202124;">University</th>
+                        <th style="padding: 15px; text-align: left; font-weight: 700; color: #202124;">Country</th>
+                        <th style="padding: 15px; text-align: left; font-weight: 700; color: #202124;">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #e9ecef; background: #fff9e6;">
+                        <td style="padding: 12px 15px; font-weight: 700; color: #2165d5;">1</td>
+                        <td style="padding: 12px 15px;">Massachusetts Institute of Technology (MIT)</td>
+                        <td style="padding: 12px 15px;">United States</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">98.5</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef; background: #fff9e6;">
+                        <td style="padding: 12px 15px; font-weight: 700; color: #2165d5;">2</td>
+                        <td style="padding: 12px 15px;">Stanford University</td>
+                        <td style="padding: 12px 15px;">United States</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">97.2</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef; background: #fff9e6;">
+                        <td style="padding: 12px 15px; font-weight: 700; color: #2165d5;">3</td>
+                        <td style="padding: 12px 15px;">Harvard University</td>
+                        <td style="padding: 12px 15px;">United States</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">96.8</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 12px 15px; font-weight: 700;">4</td>
+                        <td style="padding: 12px 15px;">California Institute of Technology</td>
+                        <td style="padding: 12px 15px;">United States</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">96.1</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 12px 15px; font-weight: 700;">5</td>
+                        <td style="padding: 12px 15px;">University of Oxford</td>
+                        <td style="padding: 12px 15px;">United Kingdom</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">95.7</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 12px 15px; font-weight: 700;">6</td>
+                        <td style="padding: 12px 15px;">University of Cambridge</td>
+                        <td style="padding: 12px 15px;">United Kingdom</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">95.3</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 12px 15px; font-weight: 700;">7</td>
+                        <td style="padding: 12px 15px;">ETH Zurich</td>
+                        <td style="padding: 12px 15px;">Switzerland</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">94.8</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 12px 15px; font-weight: 700;">8</td>
+                        <td style="padding: 12px 15px;">Imperial College London</td>
+                        <td style="padding: 12px 15px;">United Kingdom</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">94.2</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 12px 15px; font-weight: 700;">9</td>
+                        <td style="padding: 12px 15px;">University of Chicago</td>
+                        <td style="padding: 12px 15px;">United States</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">93.9</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px 15px; font-weight: 700;">10</td>
+                        <td style="padding: 12px 15px;">National University of Singapore</td>
+                        <td style="padding: 12px 15px;">Singapore</td>
+                        <td style="padding: 12px 15px; font-weight: 700;">93.5</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
+
+        <p class="hero-description" style="margin-top: 30px;">
+            <strong>Note:</strong> Rankings are updated annually. For detailed methodology, please visit our <a href="methodology.html" style="color: #2165d5; text-decoration: underline;">Methodology page</a>.
+        </p>
+    </main>
 </body>
 </html>

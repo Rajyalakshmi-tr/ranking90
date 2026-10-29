@@ -7,79 +7,87 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <div class="tr-logo">TR</div>
-            <span class="logo-text">World University Ranking</span>
-        </div>
-        <nav class="nav">
-            <a href="index.html" class="nav-btn">Home</a>
-            <a href="about.html" class="nav-btn">About</a>
-            <a href="rankings.html" class="nav-btn">Rankings</a>
-            <a href="methodology.html" class="nav-btn">Methodology</a>
-            <a href="contact.html" class="nav-btn active">Contact</a>
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-logo">TR</span>
+            <span class="brand-name">World University<br>Ranking</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="rankings.html" class="nav-link">Rankings</a>
+            <a href="methodology.html" class="nav-link">Methodology</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
         </nav>
     </header>
-    <div class="container">
-        <div class="content">
-            <h1 class="page-title">Contact Us</h1>
-            
-            <div class="contact-intro">
-                <p>Have questions about our rankings, methodology, or need assistance? We'd love to hear from you!</p>
-            </div>
+    <main class="hero">
+        <h1>Contact Us</h1>
 
-            <div class="contact-form-container">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">Select a subject</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="methodology">Methodology Questions</option>
-                            <option value="data">Data Corrections</option>
-                            <option value="partnership">Partnership Opportunities</option>
-                            <option value="media">Media Inquiries</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
+        <p class="hero-description">
+            Have questions about our rankings, methodology, or need assistance? We'd love to hear from you!
+        </p>
 
-            <div class="contact-info">
-                <h2>Other Ways to Reach Us</h2>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <strong>Email:</strong> info@trworldranking.com
-                    </div>
-                    <div class="contact-item">
-                        <strong>Phone:</strong> +1 (555) 123-4567
-                    </div>
-                    <div class="contact-item">
-                        <strong>Address:</strong> 123 University Avenue, Education City, CA 94305
-                    </div>
-                </div>
-            </div>
+        <form class="search-form" style="flex-direction: column; padding: 20px; gap: 15px;">
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                aria-label="Name"
+                style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;"
+            >
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                aria-label="Email"
+                style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;"
+            >
+            <select
+                name="subject"
+                aria-label="Subject"
+                style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;"
+            >
+                <option value="">Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="methodology">Methodology Questions</option>
+                <option value="data">Data Corrections</option>
+                <option value="partnership">Partnership Opportunities</option>
+                <option value="media">Media Inquiries</option>
+            </select>
+            <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                aria-label="Message"
+                style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; resize: vertical;"
+            ></textarea>
+            <button type="submit" style="width: 100%;">Send Message</button>
+        </form>
 
-            <div class="response-time">
-                <p><em>We typically respond to inquiries within 1-2 business days.</em></p>
-            </div>
-        </div>
-    </div>
+        <section class="features-grid" aria-label="Contact information" style="margin-top: 40px;">
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">✉</div>
+                <h3>Email</h3>
+                <p>info@trworldranking.com</p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">📞</div>
+                <h3>Phone</h3>
+                <p>+1 (555) 123-4567</p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon" aria-hidden="true">📍</div>
+                <h3>Address</h3>
+                <p>123 University Avenue, Education City, CA 94305</p>
+            </article>
+        </section>
+
+        <p class="hero-description" style="margin-top: 30px;">
+            <em>We typically respond to inquiries within 1-2 business days.</em>
+        </p>
+    </main>
 </body>
 </html>
