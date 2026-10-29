@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #f8f9fa;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -18,10 +18,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 .logo-container {
@@ -33,7 +32,7 @@ body {
 .tr-logo {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #4a90e2;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -41,8 +40,8 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
-    border: 2px solid rgba(102, 126, 234, 0.3);
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    border: 2px solid #357abd;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
 .logo-text {
@@ -60,9 +59,9 @@ body {
 
 .nav-btn {
     padding: 0.75rem 1.5rem;
-    background: #667eea;
+    background: #4a90e2;
     color: white;
-    border: 1px solid #667eea;
+    border: 1px solid #4a90e2;
     border-radius: 25px;
     font-size: 1rem;
     cursor: pointer;
@@ -72,10 +71,10 @@ body {
 }
 
 .nav-btn:hover {
-    background: #5568d3;
-    border-color: #5568d3;
+    background: #357abd;
+    border-color: #357abd;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
 .container {
@@ -192,7 +191,7 @@ body {
 
 .email-form button {
     padding: 0.75rem 1.5rem;
-    background: #667eea;
+    background: #4a90e2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -202,7 +201,7 @@ body {
 }
 
 .email-form button:hover {
-    background: #5568d3;
+    background: #357abd;
 }
 
 .page-title {
@@ -216,9 +215,9 @@ body {
 .about-section {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: rgba(102, 126, 234, 0.05);
+    background: rgba(74, 144, 226, 0.05);
     border-radius: 10px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #4a90e2;
 }
 
 .about-section h2 {
@@ -250,19 +249,19 @@ body {
 }
 
 .link {
-    color: #667eea;
+    color: #4a90e2;
     text-decoration: underline;
     transition: color 0.3s;
 }
 
 .link:hover {
-    color: #5568d3;
+    color: #357abd;
 }
 
 .nav-btn.active {
-    background: #5568d3;
-    border-color: #5568d3;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    background: #357abd;
+    border-color: #357abd;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
 .ranking-intro {
@@ -286,7 +285,7 @@ body {
 }
 
 .ranking-table thead {
-    background: #667eea;
+    background: #4a90e2;
     color: white;
 }
 
@@ -295,7 +294,7 @@ body {
     text-align: left;
     font-weight: bold;
     font-size: 1.1rem;
-    border-bottom: 2px solid #5568d3;
+    border-bottom: 2px solid #357abd;
 }
 
 .ranking-table td {
@@ -305,7 +304,7 @@ body {
 }
 
 .ranking-table tbody tr:hover {
-    background: rgba(102, 126, 234, 0.05);
+    background: rgba(74, 144, 226, 0.05);
 }
 
 .rank-1 {
@@ -389,7 +388,7 @@ body {
 
 .submit-btn {
     padding: 1rem 2rem;
-    background: #667eea;
+    background: #4a90e2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -400,7 +399,7 @@ body {
 }
 
 .submit-btn:hover {
-    background: #5568d3;
+    background: #357abd;
 }
 
 .contact-info {
