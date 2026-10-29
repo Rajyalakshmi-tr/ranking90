@@ -6,11 +6,11 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    color: white;
+    color: #333;
 }
 
 .header {
@@ -18,9 +18,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-container {
@@ -40,14 +41,15 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .logo-text {
     font-size: 1.8rem;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #333;
+    text-shadow: none;
 }
 
 .nav {
@@ -58,22 +60,22 @@ body {
 
 .nav-btn {
     padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: #667eea;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid #667eea;
     border-radius: 25px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
     text-decoration: none;
     display: inline-block;
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: #5568d3;
+    border-color: #5568d3;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .container {
@@ -89,25 +91,27 @@ body {
 
 .content {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 3rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #333;
+    text-shadow: none;
 }
 
 .tagline {
     font-size: 1.2rem;
-    opacity: 0.9;
+    color: #666;
     margin-bottom: 2rem;
 }
 
@@ -118,11 +122,12 @@ body {
 .launch-info h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    color: #333;
 }
 
 .launch-date {
     font-size: 1.3rem;
-    opacity: 0.9;
+    color: #666;
 }
 
 .countdown {
@@ -134,10 +139,12 @@ body {
 }
 
 .countdown-item {
-    background: rgba(255, 255, 255, 0.2);
+    background: white;
     padding: 1rem 1.5rem;
     border-radius: 10px;
     min-width: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
 }
 
 .countdown-item .number {
@@ -145,13 +152,14 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 0.25rem;
+    color: #667eea;
 }
 
 .countdown-item .label {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    opacity: 0.8;
+    color: #666;
 }
 
 .newsletter {
@@ -161,6 +169,7 @@ body {
 .newsletter p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
+    color: #555;
 }
 
 .email-form {
@@ -172,11 +181,13 @@ body {
 
 .email-form input {
     padding: 0.75rem 1rem;
-    border: none;
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
     min-width: 250px;
     max-width: 100%;
+    background: white;
+    color: #333;
 }
 
 .email-form button {
@@ -198,27 +209,28 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #333;
+    text-shadow: none;
 }
 
 .about-section {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(102, 126, 234, 0.05);
     border-radius: 10px;
-    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    border-left: 4px solid #667eea;
 }
 
 .about-section h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: #333;
 }
 
 .about-section p {
     font-size: 1.1rem;
     line-height: 1.6;
-    opacity: 0.9;
+    color: #555;
 }
 
 .features-list {
@@ -229,7 +241,8 @@ body {
 .features-list li {
     padding: 0.75rem 0;
     font-size: 1.1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #555;
 }
 
 .features-list li:last-child {
@@ -237,18 +250,19 @@ body {
 }
 
 .link {
-    color: rgba(255, 255, 255, 0.9);
+    color: #667eea;
     text-decoration: underline;
     transition: color 0.3s;
 }
 
 .link:hover {
-    color: white;
+    color: #5568d3;
 }
 
 .nav-btn.active {
-    background: rgba(255, 255, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: #5568d3;
+    border-color: #5568d3;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .ranking-intro {
@@ -265,13 +279,15 @@ body {
 .ranking-table {
     width: 100%;
     border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .ranking-table thead {
-    background: rgba(255, 255, 255, 0.2);
+    background: #667eea;
+    color: white;
 }
 
 .ranking-table th {
@@ -279,36 +295,39 @@ body {
     text-align: left;
     font-weight: bold;
     font-size: 1.1rem;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid #5568d3;
 }
 
 .ranking-table td {
     padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
 }
 
 .ranking-table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(102, 126, 234, 0.05);
 }
 
 .rank-1 {
-    background: rgba(255, 215, 0, 0.2);
+    background: rgba(255, 215, 0, 0.15);
 }
 
 .rank-2 {
-    background: rgba(192, 192, 192, 0.2);
+    background: rgba(192, 192, 192, 0.15);
 }
 
 .rank-3 {
-    background: rgba(205, 127, 50, 0.2);
+    background: rgba(205, 127, 50, 0.15);
 }
 
 .ranking-note {
     margin-top: 2rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(102, 126, 234, 0.05);
     border-radius: 10px;
     font-size: 0.95rem;
+    color: #555;
+    border: 1px solid rgba(102, 126, 234, 0.1);
 }
 
 .contact-intro {
@@ -342,30 +361,30 @@ body {
 .form-group select,
 .form-group textarea {
     padding: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: white;
+    color: #333;
     font-size: 1rem;
     font-family: inherit;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: #999;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.15);
+    border-color: #667eea;
+    background: #fafafa;
 }
 
 .form-group select option {
-    background: #667eea;
-    color: white;
+    background: white;
+    color: #333;
 }
 
 .submit-btn {
@@ -387,13 +406,15 @@ body {
 .contact-info {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(102, 126, 234, 0.05);
     border-radius: 10px;
+    border: 1px solid rgba(102, 126, 234, 0.1);
 }
 
 .contact-info h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: #333;
 }
 
 .contact-details {
@@ -405,35 +426,37 @@ body {
 .contact-item {
     font-size: 1.1rem;
     padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: white;
     border-radius: 5px;
+    color: #555;
+    border: 1px solid #e0e0e0;
 }
 
 .response-time {
     margin-top: 1.5rem;
     text-align: center;
     font-style: italic;
-    opacity: 0.8;
+    color: #777;
 }
 
 .home-section {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(102, 126, 234, 0.05);
     border-radius: 10px;
-    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    border-left: 4px solid #667eea;
 }
 
 .home-section h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: #333;
 }
 
 .home-section p {
     font-size: 1.1rem;
     line-height: 1.6;
-    opacity: 0.9;
+    color: #555;
 }
 
 .features-grid {
@@ -444,47 +467,51 @@ body {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     padding: 1.5rem;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s, background 0.3s;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
+    background: #fafafa;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.75rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: #333;
 }
 
 .feature-card p {
     font-size: 1rem;
     line-height: 1.5;
-    opacity: 0.85;
+    color: #555;
 }
 
 .cta-section {
     margin: 3rem 0;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(102, 126, 234, 0.08);
     border-radius: 15px;
     text-align: center;
+    border: 1px solid rgba(102, 126, 234, 0.2);
 }
 
 .cta-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: #333;
 }
 
 .cta-section p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
+    color: #555;
 }
 
 .cta-button {
@@ -514,29 +541,30 @@ body {
 .methodology-section {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(102, 126, 234, 0.05);
     border-radius: 10px;
-    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    border-left: 4px solid #667eea;
 }
 
 .methodology-section h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: #333;
 }
 
 .methodology-section p {
     font-size: 1.1rem;
     line-height: 1.6;
-    opacity: 0.9;
+    color: #555;
 }
 
 .indicator-item {
     margin: 1.5rem 0;
     padding: 1.25rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: white;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .indicator-header {
@@ -548,12 +576,13 @@ body {
 
 .indicator-header h3 {
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: #333;
     margin: 0;
 }
 
 .indicator-weight {
-    background: rgba(102, 126, 234, 0.3);
+    background: #667eea;
+    color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 15px;
     font-weight: bold;
@@ -563,7 +592,7 @@ body {
 .indicator-item p {
     font-size: 1rem;
     line-height: 1.5;
-    opacity: 0.85;
+    color: #555;
     margin: 0;
 }
 
@@ -575,9 +604,10 @@ body {
 .data-sources-list li {
     padding: 0.75rem 0;
     font-size: 1.1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #e0e0e0;
     position: relative;
     padding-left: 2rem;
+    color: #555;
 }
 
 .data-sources-list li:before {
@@ -599,9 +629,10 @@ body {
 .scoring-process li {
     padding: 0.75rem 0;
     font-size: 1.1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #e0e0e0;
     position: relative;
     padding-left: 3rem;
+    color: #555;
 }
 
 .scoring-process li:before {
@@ -611,7 +642,8 @@ body {
     left: 0;
     width: 2rem;
     height: 2rem;
-    background: rgba(102, 126, 234, 0.4);
+    background: #667eea;
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -627,9 +659,11 @@ body {
 .methodology-note {
     margin-top: 2rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(102, 126, 234, 0.05);
     border-radius: 10px;
     font-size: 0.95rem;
+    color: #555;
+    border: 1px solid rgba(102, 126, 234, 0.1);
 }
 
 @media (max-width: 768px) {
