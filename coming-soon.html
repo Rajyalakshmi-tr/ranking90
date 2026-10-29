@@ -36,6 +36,25 @@
       <div style="font-size: 24px; font-weight: 600; margin-top: 5px;">11:00 AM</div>
     </div>
 
+    <div id="countdown" style="display: flex; justify-content: center; gap: 20px; margin: 30px auto; flex-wrap: wrap;">
+      <div style="background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); min-width: 100px; text-align: center;">
+        <div id="days" style="font-size: 48px; font-weight: 800; color: #2165d5; line-height: 1;">00</div>
+        <div style="font-size: 14px; font-weight: 600; color: #41444b; margin-top: 5px;">DAYS</div>
+      </div>
+      <div style="background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); min-width: 100px; text-align: center;">
+        <div id="hours" style="font-size: 48px; font-weight: 800; color: #2165d5; line-height: 1;">00</div>
+        <div style="font-size: 14px; font-weight: 600; color: #41444b; margin-top: 5px;">HOURS</div>
+      </div>
+      <div style="background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); min-width: 100px; text-align: center;">
+        <div id="minutes" style="font-size: 48px; font-weight: 800; color: #2165d5; line-height: 1;">00</div>
+        <div style="font-size: 14px; font-weight: 600; color: #41444b; margin-top: 5px;">MINUTES</div>
+      </div>
+      <div style="background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); min-width: 100px; text-align: center;">
+        <div id="seconds" style="font-size: 48px; font-weight: 800; color: #2165d5; line-height: 1;">00</div>
+        <div style="font-size: 14px; font-weight: 600; color: #41444b; margin-top: 5px;">SECONDS</div>
+      </div>
+    </div>
+
     <p class="hero-description">
       We're working hard to bring you the most comprehensive and transparent university rankings. Stay tuned for the launch!
     </p>
@@ -76,6 +95,35 @@
       </a>
     </div>
   </main>
+
+  <script>
+    // Set the launch date - December 11, 2026 at 11:00 AM
+    const launchDate = new Date('December 11, 2026 11:00:00').getTime();
+
+    // Update the countdown every 1 second
+    const countdownInterval = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      // Calculate time units
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result
+      document.getElementById('days').innerHTML = days < 10 ? '0' + days : days;
+      document.getElementById('hours').innerHTML = hours < 10 ? '0' + hours : hours;
+      document.getElementById('minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById('seconds').innerHTML = seconds < 10 ? '0' + seconds : seconds;
+
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById('countdown').innerHTML = '<div style="font-size: 36px; font-weight: 800; color: #2165d5;">🎉 LAUNCHED! 🎉</div>';
+      }
+    }, 1000);
+  </script>
 
 </body>
 </html>
