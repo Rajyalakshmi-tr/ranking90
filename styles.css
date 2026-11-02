@@ -11,8 +11,9 @@ body {
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #0f172a;
-  background: radial-gradient(circle at top right, #e0f2fe 0%, #38bdf8 40%, #0284c7 100%);
+  background: radial-gradient(circle at 75% 20%, #a5f3fc 0%, #38bdf8 45%, #0284c7 100%);
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 a {
