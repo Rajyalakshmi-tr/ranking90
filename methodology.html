@@ -17,8 +17,8 @@
         </a>
 
         <div class="header-buttons">
-            <button class="btn-login" onclick="showMultiStepModal()">Log in</button>
-            <button class="btn-register" onclick="showMultiStepModal()">Register University</button>
+            <button class="btn-login" onclick="showLoginModal()">Log in</button>
+            <button class="btn-register" onclick="showRegisterModal()">Register University</button>
         </div>
     </header>
     <main class="hero">
@@ -111,125 +111,161 @@
         </div>
     </main>
 
-    <!-- Multi-Step Modal -->
-    <div id="multiStepModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto;">
-        <div style="background: white; padding: 40px; border-radius: 16px; max-width: 600px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.2); margin: 20px;">
-            <h2 id="modalTitle" style="margin: 0 0 20px; color: #25262b; text-align: center;">Welcome</h2>
+    <!-- Login Modal -->
+    <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto;">
+        <div style="background: white; padding: 40px; border-radius: 16px; max-width: 480px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.2); margin: 20px; position: relative;">
+            <button onclick="closeLoginModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
 
-            <!-- Step Indicators -->
-            <div id="stepIndicators" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 30px;">
-                <div class="step-indicator" data-step="1" style="width: 30px; height: 30px; border-radius: 50%; background: #2165d5; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">1</div>
-                <div class="step-indicator" data-step="2" style="width: 30px; height: 30px; border-radius: 50%; background: #e0e0e0; color: #666; display: flex; align-items: center; justify-content: center; font-weight: 700;">2</div>
-                <div class="step-indicator" data-step="3" style="width: 30px; height: 30px; border-radius: 50%; background: #e0e0e0; color: #666; display: flex; align-items: center; justify-content: center; font-weight: 700;">3</div>
+            <h2 style="margin: 0 0 8px; color: #25262b; text-align: center; font-size: 28px; font-weight: 700;">Log in</h2>
+            <p style="margin: 0 0 25px; color: #666; text-align: center; font-size: 14px;">Access your institutional portal or account.</p>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; background: white; color: #333; font-weight: 600; cursor: pointer; font-size: 14px;">
+                    <span style="font-size: 18px;">G</span> Continue with Google
+                </button>
+                <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; background: white; color: #333; font-weight: 600; cursor: pointer; font-size: 14px;">
+                    <span style="font-size: 18px;">f</span> Continue with Facebook
+                </button>
             </div>
 
-            <!-- Step 1: Choose Login or Register -->
-            <div id="step1" class="step-content" style="display: block;">
-                <p style="text-align: center; margin-bottom: 30px; color: #41444b;">Please choose an option to continue:</p>
-                <div style="display: flex; gap: 15px; flex-direction: column;">
-                    <button onclick="goToStep(2, 'login')" style="padding: 15px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px;">Login</button>
-                    <button onclick="goToStep(2, 'register')" style="padding: 15px; background: #ffffff; color: #2165d5; border: 2px solid #2165d5; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px;">Register University</button>
+            <p style="margin: 0 0 20px; color: #999; text-align: center; font-size: 12px;">By continuing you agree to TR Global Rankings <a href="#" style="color: #2165d5;">Terms</a> and <a href="#" style="color: #2165d5;">Privacy Policy</a>.</p>
+
+            <div style="display: flex; align-items: center; margin: 20px 0;">
+                <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+                <span style="padding: 0 15px; color: #999; font-size: 12px; font-weight: 600;">OR</span>
+                <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+            </div>
+
+            <form id="loginForm" style="display: flex; flex-direction: column; gap: 20px;">
+                <div>
+                    <label style="display: block; margin-bottom: 8px; color: #333; font-size: 13px; font-weight: 600;">Official Email Address*</label>
+                    <input type="email" placeholder="Enter your email" style="width: 100%; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
                 </div>
-            </div>
-
-            <!-- Step 2: Login Form -->
-            <div id="step2" class="step-content" style="display: none;">
-                <form id="loginForm" style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="email" placeholder="Email" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <input type="password" placeholder="Password" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <button type="submit" style="padding: 12px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">Login</button>
-                </form>
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <button onclick="goToStep(1)" style="flex: 1; padding: 10px; background: #f0f0f2; color: #333; border: none; border-radius: 8px; cursor: pointer;">Back</button>
-                </div>
-            </div>
-
-            <!-- Step 2: Register Form -->
-            <div id="step2Register" class="step-content" style="display: none;">
-                <form id="registerForm" style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="text" placeholder="University Name" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <input type="text" placeholder="Country" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <input type="email" placeholder="Official Email" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <input type="password" placeholder="Password" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <input type="password" placeholder="Confirm Password" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <button type="submit" style="padding: 12px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">Register</button>
-                </form>
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <button onclick="goToStep(1)" style="flex: 1; padding: 10px; background: #f0f0f2; color: #333; border: none; border-radius: 8px; cursor: pointer;">Back</button>
-                </div>
-            </div>
-
-            <!-- Step 3: University Assessment Form -->
-            <div id="step3" class="step-content" style="display: none;">
-                <form id="assessmentForm" style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="number" placeholder="Number of Students" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <input type="number" placeholder="Number of Faculty" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <input type="number" placeholder="Number of Programs" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <input type="number" placeholder="Year Established" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                    <select style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                        <option value="">Select Accreditation Status</option>
-                        <option value="accredited">Fully Accredited</option>
-                        <option value="provisional">Provisionally Accredited</option>
-                        <option value="candidate">Candidate for Accreditation</option>
-                        <option value="not-accredited">Not Accredited</option>
-                    </select>
-                    <textarea placeholder="University Description" rows="3" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; resize: vertical;" required></textarea>
-                    <div style="display: flex; gap: 10px;">
-                        <input type="number" placeholder="Research Budget (in millions)" style="flex: 1; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
-                        <input type="number" placeholder="International Students (%)" style="flex: 1; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                <div>
+                    <label style="display: block; margin-bottom: 8px; color: #333; font-size: 13px; font-weight: 600;">Password*</label>
+                    <div style="position: relative;">
+                        <input type="password" id="loginPassword" placeholder="Enter your password" style="width: 100%; padding: 12px; padding-right: 40px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                        <span onclick="togglePassword('loginPassword')" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #999;">👁</span>
                     </div>
-                    <button type="submit" style="padding: 12px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">Submit Assessment</button>
-                </form>
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <button onclick="goToStep(1)" style="flex: 1; padding: 10px; background: #f0f0f2; color: #333; border: none; border-radius: 8px; cursor: pointer;">Back</button>
                 </div>
+                <div style="text-align: right;">
+                    <a href="#" style="color: #2165d5; font-size: 13px; text-decoration: none;">Forgot Password?</a>
+                </div>
+                <button type="submit" style="padding: 14px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px;">Log in</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto;">
+        <div style="background: white; padding: 40px; border-radius: 16px; max-width: 480px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.2); margin: 20px; position: relative;">
+            <button onclick="closeRegisterModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
+
+            <h2 style="margin: 0 0 8px; color: #25262b; text-align: center; font-size: 28px; font-weight: 700;">Register University</h2>
+            <p style="margin: 0 0 25px; color: #666; text-align: center; font-size: 14px;">Create an account to submit your institution for evaluation.</p>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; background: white; color: #333; font-weight: 600; cursor: pointer; font-size: 14px;">
+                    <span style="font-size: 18px;">G</span> Continue with Google
+                </button>
+                <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; background: white; color: #333; font-weight: 600; cursor: pointer; font-size: 14px;">
+                    <span style="font-size: 18px;">f</span> Continue with Facebook
+                </button>
             </div>
 
-            <button onclick="closeMultiStepModal()" style="margin-top: 20px; padding: 10px; background: #f0f0f2; color: #333; border: none; border-radius: 8px; cursor: pointer; width: 100%;">Cancel</button>
+            <p style="margin: 0 0 20px; color: #999; text-align: center; font-size: 12px;">By continuing you agree to TR Global Rankings <a href="#" style="color: #2165d5;">Terms</a> and <a href="#" style="color: #2165d5;">Privacy Policy</a>.</p>
+
+            <div style="display: flex; align-items: center; margin: 20px 0;">
+                <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+                <span style="padding: 0 15px; color: #999; font-size: 12px; font-weight: 600;">OR</span>
+                <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+            </div>
+
+            <form id="registerForm" style="display: flex; flex-direction: column; gap: 20px;">
+                <div>
+                    <label style="display: block; margin-bottom: 8px; color: #333; font-size: 13px; font-weight: 600;">Official Email Address*</label>
+                    <input type="email" placeholder="Enter your email" style="width: 100%; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 8px; color: #333; font-size: 13px; font-weight: 600;">Password*</label>
+                    <div style="position: relative;">
+                        <input type="password" id="registerPassword" placeholder="Enter your password" style="width: 100%; padding: 12px; padding-right: 40px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                        <span onclick="togglePassword('registerPassword')" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #999;">👁</span>
+                    </div>
+                </div>
+                <div style="text-align: right;">
+                    <a href="#" style="color: #2165d5; font-size: 13px; text-decoration: none;">Forgot Password?</a>
+                </div>
+                <button type="submit" style="padding: 14px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px;">Proceed to Assessment Form</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Assessment Modal -->
+    <div id="assessmentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto;">
+        <div style="background: white; padding: 40px; border-radius: 16px; max-width: 600px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.2); margin: 20px; position: relative;">
+            <button onclick="closeAssessmentModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
+
+            <h2 style="margin: 0 0 8px; color: #25262b; text-align: center; font-size: 28px; font-weight: 700;">University Assessment</h2>
+            <p style="margin: 0 0 25px; color: #666; text-align: center; font-size: 14px;">Complete your institution's assessment data.</p>
+
+            <form id="assessmentForm" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="University Name" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                <input type="text" placeholder="Country" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                <input type="number" placeholder="Number of Students" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                <input type="number" placeholder="Number of Faculty" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                <input type="number" placeholder="Number of Programs" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                <input type="number" placeholder="Year Established" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                <select style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                    <option value="">Select Accreditation Status</option>
+                    <option value="accredited">Fully Accredited</option>
+                    <option value="provisional">Provisionally Accredited</option>
+                    <option value="candidate">Candidate for Accreditation</option>
+                    <option value="not-accredited">Not Accredited</option>
+                </select>
+                <textarea placeholder="University Description" rows="3" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; resize: vertical;" required></textarea>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" placeholder="Research Budget (in millions)" style="flex: 1; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                    <input type="number" placeholder="International Students (%)" style="flex: 1; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+                </div>
+                <button type="submit" style="padding: 14px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px;">Submit Assessment</button>
+            </form>
         </div>
     </div>
 
     <script>
-        // Multi-step modal functions
-        function showMultiStepModal() {
-            document.getElementById('multiStepModal').style.display = 'flex';
-            goToStep(1);
+        // Modal functions
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
         }
 
-        function closeMultiStepModal() {
-            document.getElementById('multiStepModal').style.display = 'none';
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
         }
 
-        function goToStep(step, option) {
-            // Hide all steps
-            document.querySelectorAll('.step-content').forEach(el => el.style.display = 'none');
+        function showRegisterModal() {
+            document.getElementById('registerModal').style.display = 'flex';
+        }
 
-            // Update step indicators
-            document.querySelectorAll('.step-indicator').forEach((el, index) => {
-                if (index + 1 <= step) {
-                    el.style.background = '#2165d5';
-                    el.style.color = 'white';
-                } else {
-                    el.style.background = '#e0e0e0';
-                    el.style.color = '#666';
-                }
-            });
+        function closeRegisterModal() {
+            document.getElementById('registerModal').style.display = 'none';
+        }
 
-            // Show selected step
-            if (step === 1) {
-                document.getElementById('step1').style.display = 'block';
-                document.getElementById('modalTitle').textContent = 'Welcome';
-            } else if (step === 2) {
-                if (option === 'login') {
-                    document.getElementById('step2').style.display = 'block';
-                    document.getElementById('modalTitle').textContent = 'Login';
-                } else if (option === 'register') {
-                    document.getElementById('step2Register').style.display = 'block';
-                    document.getElementById('modalTitle').textContent = 'Register University';
-                }
-            } else if (step === 3) {
-                document.getElementById('step3').style.display = 'block';
-                document.getElementById('modalTitle').textContent = 'University Assessment';
+        function showAssessmentModal() {
+            document.getElementById('assessmentModal').style.display = 'flex';
+        }
+
+        function closeAssessmentModal() {
+            document.getElementById('assessmentModal').style.display = 'none';
+        }
+
+        // Toggle password visibility
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+            } else {
+                input.type = 'password';
             }
         }
 
@@ -237,25 +273,34 @@
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Login successful! (Demo)');
-            closeMultiStepModal();
+            closeLoginModal();
         });
 
         document.getElementById('registerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            goToStep(3);
+            closeRegisterModal();
+            showAssessmentModal();
         });
 
         document.getElementById('assessmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('University assessment submitted successfully! (Demo)');
-            closeMultiStepModal();
+            closeAssessmentModal();
         });
 
-        // Close modal when clicking outside
+        // Close modals when clicking outside
         window.onclick = function(event) {
-            const multiStepModal = document.getElementById('multiStepModal');
-            if (event.target == multiStepModal) {
-                multiStepModal.style.display = 'none';
+            const loginModal = document.getElementById('loginModal');
+            const registerModal = document.getElementById('registerModal');
+            const assessmentModal = document.getElementById('assessmentModal');
+            if (event.target == loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (event.target == registerModal) {
+                registerModal.style.display = 'none';
+            }
+            if (event.target == assessmentModal) {
+                assessmentModal.style.display = 'none';
             }
         }
     </script>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TR Global Rankings - World University Intelligence. Official launching platform for global academic benchmarking and rankings.">
+  <title>TR Global Rankings - World University Intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-logo">TR</span>
+      <div class="brand-text">
+        <span class="brand-name">GLOBAL RANKINGS</span>
+        <span class="brand-subtitle">WORLD UNIVERSITY INTELLIGENCE</span>
+      </div>
+    </div>
+
+    <div class="header-buttons">
+      <button class="btn-login" onclick="showLoginModal()">Log in</button>
+      <button class="btn-register" onclick="showRegisterModal()">Register University</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="launch-banner">
+      Official Launching Platform
+    </div>
+
+    <h1 class="hero-title">Global Academic Benchmarking & Rankings</h1>
+
+    <p class="hero-description">
+      Empowering universities, researchers, and prospective students with transparent metrics, research impact analytics, and world-class higher education insights.
+    </p>
+
+    <div class="countdown-container">
+      <div class="countdown-label">OFFICIAL LAUNCH COUNTDOWN - DEC 11, 2026 (11:00 AM)</div>
+      <div class="countdown-timer">
+        <div class="countdown-item">
+          <div id="days" class="countdown-number">40</div>
+          <div class="countdown-label-small">DAYS</div>
+        </div>
+        <div class="countdown-item">
+          <div id="hours" class="countdown-number">14</div>
+          <div class="countdown-label-small">HOURS</div>
+        </div>
+        <div class="countdown-item">
+          <div id="minutes" class="countdown-number">57</div>
+          <div class="countdown-label-small">MINS</div>
+        </div>
+        <div class="countdown-item">
+          <div id="seconds" class="countdown-number">44</div>
+          <div class="countdown-label-small">SECS</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="features-grid">
+      <article class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Transparent Methodology</h3>
+        <p>Comprehensive evaluations based on teaching quality, research citations, and international diversity.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h3>Student Mobility</h3>
+        <p>Personalized recommendations helping international students discover top academic degree programs.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">�️</div>
+        <h3>Institutional Portal</h3>
+        <p>Direct assessment submission system tailored for university deans and analytical research boards.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <span class="brand-logo">TR</span>
+          <span class="brand-name">GLOBAL RANKINGS</span>
+        </div>
+        <p class="footer-description">Empowering higher education institutions worldwide through transparent, data-driven academic benchmarking.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>For Universities</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="showMultiStepModal()">Register Institution</a></li>
+          <li><a href="#" onclick="showMultiStepModal()">Submit Assessment Data</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Stay Updated</h4>
+        <p class="footer-description">Subscribe to receive updates prior to our launch on December 11, 2026.</p>
+        <button class="btn-gemini">Ask Gemini</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto;">
+    <div style="background: white; padding: 40px; border-radius: 16px; max-width: 480px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.2); margin: 20px; position: relative;">
+      <button onclick="closeLoginModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
+
+      <h2 style="margin: 0 0 8px; color: #25262b; text-align: center; font-size: 28px; font-weight: 700;">Log in</h2>
+      <p style="margin: 0 0 25px; color: #666; text-align: center; font-size: 14px;">Access your institutional portal or account.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+        <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; background: white; color: #333; font-weight: 600; cursor: pointer; font-size: 14px;">
+          <span style="font-size: 18px;">G</span> Continue with Google
+        </button>
+        <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; background: white; color: #333; font-weight: 600; cursor: pointer; font-size: 14px;">
+          <span style="font-size: 18px;">f</span> Continue with Facebook
+        </button>
+      </div>
+
+      <p style="margin: 0 0 20px; color: #999; text-align: center; font-size: 12px;">By continuing you agree to TR Global Rankings <a href="#" style="color: #2165d5;">Terms</a> and <a href="#" style="color: #2165d5;">Privacy Policy</a>.</p>
+
+      <div style="display: flex; align-items: center; margin: 20px 0;">
+        <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+        <span style="padding: 0 15px; color: #999; font-size: 12px; font-weight: 600;">OR</span>
+        <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+      </div>
+
+      <form id="loginForm" style="display: flex; flex-direction: column; gap: 20px;">
+        <div>
+          <label style="display: block; margin-bottom: 8px; color: #333; font-size: 13px; font-weight: 600;">Official Email Address*</label>
+          <input type="email" placeholder="Enter your email" style="width: 100%; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        </div>
+        <div>
+          <label style="display: block; margin-bottom: 8px; color: #333; font-size: 13px; font-weight: 600;">Password*</label>
+          <div style="position: relative;">
+            <input type="password" id="loginPassword" placeholder="Enter your password" style="width: 100%; padding: 12px; padding-right: 40px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+            <span onclick="togglePassword('loginPassword')" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #999;">👁</span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <a href="#" style="color: #2165d5; font-size: 13px; text-decoration: none;">Forgot Password?</a>
+        </div>
+        <button type="submit" style="padding: 14px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px;">Log in</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registerModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto;">
+    <div style="background: white; padding: 40px; border-radius: 16px; max-width: 480px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.2); margin: 20px; position: relative;">
+      <button onclick="closeRegisterModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
+
+      <h2 style="margin: 0 0 8px; color: #25262b; text-align: center; font-size: 28px; font-weight: 700;">Register University</h2>
+      <p style="margin: 0 0 25px; color: #666; text-align: center; font-size: 14px;">Create an account to submit your institution for evaluation.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+        <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; background: white; color: #333; font-weight: 600; cursor: pointer; font-size: 14px;">
+          <span style="font-size: 18px;">G</span> Continue with Google
+        </button>
+        <button type="button" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; background: white; color: #333; font-weight: 600; cursor: pointer; font-size: 14px;">
+          <span style="font-size: 18px;">f</span> Continue with Facebook
+        </button>
+      </div>
+
+      <p style="margin: 0 0 20px; color: #999; text-align: center; font-size: 12px;">By continuing you agree to TR Global Rankings <a href="#" style="color: #2165d5;">Terms</a> and <a href="#" style="color: #2165d5;">Privacy Policy</a>.</p>
+
+      <div style="display: flex; align-items: center; margin: 20px 0;">
+        <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+        <span style="padding: 0 15px; color: #999; font-size: 12px; font-weight: 600;">OR</span>
+        <div style="flex: 1; height: 1px; background: #e0e0e0;"></div>
+      </div>
+
+      <form id="registerForm" style="display: flex; flex-direction: column; gap: 20px;">
+        <div>
+          <label style="display: block; margin-bottom: 8px; color: #333; font-size: 13px; font-weight: 600;">Official Email Address*</label>
+          <input type="email" placeholder="Enter your email" style="width: 100%; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        </div>
+        <div>
+          <label style="display: block; margin-bottom: 8px; color: #333; font-size: 13px; font-weight: 600;">Password*</label>
+          <div style="position: relative;">
+            <input type="password" id="registerPassword" placeholder="Enter your password" style="width: 100%; padding: 12px; padding-right: 40px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+            <span onclick="togglePassword('registerPassword')" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #999;">👁</span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <a href="#" style="color: #2165d5; font-size: 13px; text-decoration: none;">Forgot Password?</a>
+        </div>
+        <button type="submit" style="padding: 14px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px;">Proceed to Assessment Form</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Assessment Modal -->
+  <div id="assessmentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto;">
+    <div style="background: white; padding: 40px; border-radius: 16px; max-width: 600px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.2); margin: 20px; position: relative;">
+      <button onclick="closeAssessmentModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
+
+      <h2 style="margin: 0 0 8px; color: #25262b; text-align: center; font-size: 28px; font-weight: 700;">University Assessment</h2>
+      <p style="margin: 0 0 25px; color: #666; text-align: center; font-size: 14px;">Complete your institution's assessment data.</p>
+
+      <form id="assessmentForm" style="display: flex; flex-direction: column; gap: 15px;">
+        <input type="text" placeholder="University Name" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        <input type="text" placeholder="Country" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        <input type="number" placeholder="Number of Students" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        <input type="number" placeholder="Number of Faculty" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        <input type="number" placeholder="Number of Programs" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        <input type="number" placeholder="Year Established" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        <select style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+          <option value="">Select Accreditation Status</option>
+          <option value="accredited">Fully Accredited</option>
+          <option value="provisional">Provisionally Accredited</option>
+          <option value="candidate">Candidate for Accreditation</option>
+          <option value="not-accredited">Not Accredited</option>
+        </select>
+        <textarea placeholder="University Description" rows="3" style="padding: 12px; border: 1px solid #d8dce3; border-radius: 8px; resize: vertical;" required></textarea>
+        <div style="display: flex; gap: 10px;">
+          <input type="number" placeholder="Research Budget (in millions)" style="flex: 1; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+          <input type="number" placeholder="International Students (%)" style="flex: 1; padding: 12px; border: 1px solid #d8dce3; border-radius: 8px;" required>
+        </div>
+        <button type="submit" style="padding: 14px; background: #2165d5; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 16px;">Submit Assessment</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Set the launch date - December 11, 2026 at 11:00 AM
+    const launchDate = new Date('December 11, 2026 11:00:00').getTime();
+
+    // Update the countdown every 1 second
+    const countdownInterval = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      // Calculate time units
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result
+      document.getElementById('days').innerHTML = days < 10 ? '0' + days : days;
+      document.getElementById('hours').innerHTML = hours < 10 ? '0' + hours : hours;
+      document.getElementById('minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById('seconds').innerHTML = seconds < 10 ? '0' + seconds : seconds;
+
+      // If the countdown is finished, display a message
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById('countdown-timer').innerHTML = '<div style="font-size: 36px; font-weight: 800; color: #2165d5;">🎉 LAUNCHED! 🎉</div>';
+      }
+    }, 1000);
+
+    // Modal functions
+    function showLoginModal() {
+      document.getElementById('loginModal').style.display = 'flex';
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+
+    function showRegisterModal() {
+      document.getElementById('registerModal').style.display = 'flex';
+    }
+
+    function closeRegisterModal() {
+      document.getElementById('registerModal').style.display = 'none';
+    }
+
+    function showAssessmentModal() {
+      document.getElementById('assessmentModal').style.display = 'flex';
+    }
+
+    function closeAssessmentModal() {
+      document.getElementById('assessmentModal').style.display = 'none';
+    }
+
+    // Toggle password visibility
+    function togglePassword(inputId) {
+      const input = document.getElementById(inputId);
+      if (input.type === 'password') {
+        input.type = 'text';
+      } else {
+        input.type = 'password';
+      }
+    }
+
+    // Handle form submissions
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Login successful! (Demo)');
+      closeLoginModal();
+    });
+
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      closeRegisterModal();
+      showAssessmentModal();
+    });
+
+    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('University assessment submitted successfully! (Demo)');
+      closeAssessmentModal();
+    });
+
+    // Close modals when clicking outside
+    window.onclick = function(event) {
+      const loginModal = document.getElementById('loginModal');
+      const registerModal = document.getElementById('registerModal');
+      const assessmentModal = document.getElementById('assessmentModal');
+      if (event.target == loginModal) {
+        loginModal.style.display = 'none';
+      }
+      if (event.target == registerModal) {
+        registerModal.style.display = 'none';
+      }
+      if (event.target == assessmentModal) {
+        assessmentModal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
