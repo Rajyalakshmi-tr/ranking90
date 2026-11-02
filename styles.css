@@ -10,9 +10,9 @@ body {
 
 /* Vibrant, High-Contrast Cyan & Azure Gradient Backdrop */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #0f172a;
-  background: radial-gradient(circle at 50% 15%, #22d3ee 0%, #0284c7 45%, #0369a1 100%);
+  background: radial-gradient(circle at 75% 20%, #a7f3d0 0%, #14b8a6 45%, #0f766e 100%);
   background-attachment: fixed;
 }
 
