@@ -8,12 +8,12 @@ body {
   min-height: 100%;
 }
 
+/* Vibrant, High-Contrast Cyan & Azure Gradient Backdrop */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: #0f172a;
-  background: radial-gradient(circle at 75% 20%, #a5f3fc 0%, #38bdf8 45%, #0284c7 100%);
+  background: radial-gradient(circle at 50% 15%, #22d3ee 0%, #0284c7 45%, #0369a1 100%);
   background-attachment: fixed;
-  min-height: 100vh;
 }
 
 a {
@@ -24,34 +24,39 @@ a {
 /* Header */
 .site-header {
   min-height: 80px;
-  padding: 20px 5%;
+  padding: 14px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 15px;
-  color: #ffffff;
+  gap: 12px;
+  color: #0f172a;
   flex-shrink: 0;
 }
 
 .brand-logo {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #2165d5;
-  font-size: 24px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 19px;
   font-weight: 800;
+  letter-spacing: -0.5px;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 .brand-text {
@@ -60,17 +65,19 @@ a {
 }
 
 .brand-name {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+  color: #0f172a;
 }
 
 .brand-subtitle {
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  opacity: 0.9;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #2563eb;
+  margin-top: 2px;
 }
 
 .header-buttons {
@@ -79,169 +86,193 @@ a {
 }
 
 .btn-login {
-  padding: 10px 24px;
-  border: 2px solid #ffffff;
-  border-radius: 24px;
-  background: transparent;
+  padding: 10px 20px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-login:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.btn-register {
+  padding: 10px 20px;
+  border: 1.5px solid #2563eb;
+  border-radius: 6px;
+  background: #2563eb;
   color: #ffffff;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn-login:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.btn-register {
-  padding: 10px 24px;
-  border: none;
-  border-radius: 24px;
-  background: #ffffff;
-  color: #2165d5;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
 }
 
 .btn-register:hover {
-  background: #e0e0e0;
-  transform: translateY(-2px);
+  background: #1d4ed8;
+  border-color: #1d4ed8;
 }
 
 /* Hero Section */
 .hero {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 36px 80px;
+  padding: 60px 24px 80px;
   text-align: center;
 }
 
 .launch-banner {
-  display: inline-block;
-  padding: 8px 24px;
-  background: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: #ffffff;
   border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero-title {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   color: #ffffff;
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.2;
+  font-size: clamp(36px, 5vw, 48px);
+  line-height: 1.15;
   font-weight: 800;
   letter-spacing: -1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .hero-description {
-  max-width: 800px;
-  margin: 0 auto 50px;
-  color: rgba(255, 255, 255, 0.9);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  color: #f8fafc;
   font-size: 18px;
   line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Countdown */
 .countdown-container {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 30px 40px;
+  background: #ffffff;
+  padding: 32px;
   border-radius: 16px;
-  margin: 0 auto 60px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
 }
 
 .countdown-label {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  opacity: 0.9;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
 }
 
 .countdown-timer {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .countdown-item {
+  background: #f8fafc;
+  padding: 14px 18px;
+  border-radius: 10px;
+  min-width: 85px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   text-align: center;
 }
 
 .countdown-number {
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 800;
+  color: #2563eb;
   line-height: 1;
-  margin-bottom: 8px;
 }
 
 .countdown-label-small {
-  font-size: 12px;
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 2px;
-  opacity: 0.8;
+  margin-top: 4px;
 }
 
 /* Features Grid */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
+  gap: 24px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .feature-card {
-  padding: 30px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+  padding: 32px 24px;
   border-radius: 16px;
-  transition: transform 0.3s, background 0.3s;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
 }
 
 .feature-icon {
-  font-size: 48px;
+  width: 44px;
+  height: 44px;
+  background: #dbeafe;
+  color: #2563eb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
   margin-bottom: 16px;
+  font-weight: 700;
 }
 
 .feature-card h3 {
-  margin: 0 0 12px;
-  color: #ffffff;
-  font-size: 20px;
-  line-height: 1.3;
+  margin: 0 0 8px;
+  color: #0f172a;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .feature-card p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: #475569;
   font-size: 14px;
-  line-height: 1.6;
-  text-align: center;
+  line-height: 1.5;
+  text-align: left;
 }
 
 /* Footer */
 .site-footer {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 60px 5%;
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 60px 8% 30px;
   margin-top: 80px;
+  font-size: 14px;
+  box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .footer-content {
@@ -253,22 +284,21 @@ a {
 }
 
 .footer-section h4 {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .footer-brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .footer-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: #94a3b8;
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
@@ -278,16 +308,17 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
+  line-height: 2.2;
 }
 
 .footer-links li {
-  margin-bottom: 12px;
+  margin-bottom: 4px;
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.8);
+  color: #94a3b8;
   font-size: 14px;
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
 
 .footer-links a:hover {
@@ -295,21 +326,20 @@ a {
 }
 
 .btn-gemini {
-  padding: 12px 24px;
+  padding: 10px 18px;
   border: none;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #2165d5;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #ffffff;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 15px;
+  transition: background 0.2s;
+  margin-top: 14px;
 }
 
 .btn-gemini:hover {
-  background: #e0e0e0;
-  transform: translateY(-2px);
+  background: #1d4ed8;
 }
 
 /* Responsive */
@@ -340,7 +370,7 @@ a {
   }
 
   .countdown-number {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .footer-content {
