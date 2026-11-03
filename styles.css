@@ -22,18 +22,22 @@ a {
 }
 
 /* Header */
+
+/* ===== Professional TR Rankings Header ===== */
+
 .site-header {
-  min-height: 80px;
-  padding: 14px 5%;
+  width: 100%;
+  min-height: 82px;
+  padding: 12px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 25px;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -42,20 +46,20 @@ a {
   align-items: center;
   gap: 12px;
   color: #0f172a;
+  text-decoration: none;
   flex-shrink: 0;
 }
 
 .brand-logo {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
-  border-radius: 8px;
+  border-radius: 9px;
   background: #2563eb;
   color: #ffffff;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 800;
-  letter-spacing: -0.5px;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
@@ -65,36 +69,68 @@ a {
 }
 
 .brand-name {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.3px;
+  letter-spacing: 0.8px;
   color: #0f172a;
+  white-space: nowrap;
 }
 
-.brand-subtitle {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.main-nav > a {
+  position: relative;
+  padding: 10px 0;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.main-nav > a:hover,
+.main-nav > a.active {
   color: #2563eb;
-  margin-top: 2px;
+}
+
+.main-nav > a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2563eb;
+  border-radius: 2px;
 }
 
 .header-buttons {
   display: flex;
+  align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
-.btn-login {
-  padding: 10px 20px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #0f172a;
+.btn-login,
+.btn-register {
+  padding: 11px 20px;
+  border-radius: 7px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.btn-login {
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
 }
 
 .btn-login:hover {
@@ -103,22 +139,80 @@ a {
 }
 
 .btn-register {
-  padding: 10px 20px;
   border: 1.5px solid #2563eb;
-  border-radius: 6px;
   background: #2563eb;
   color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 .btn-register:hover {
   background: #1d4ed8;
   border-color: #1d4ed8;
+  transform: translateY(-1px);
 }
+
+.menu-toggle,
+.mobile-buttons {
+  display: none;
+}
+
+/* ===== Mobile Navigation ===== */
+
+@media (max-width: 950px) {
+  .site-header {
+    flex-wrap: wrap;
+    padding: 12px 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    padding: 7px 13px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+  .header-buttons {
+    display: none;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 15px 0 5px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+
+  .main-nav > a {
+    padding: 12px 5px;
+  }
+
+  .main-nav > a.active::after {
+    display: none;
+  }
+
+  .mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 12px;
+  }
+
+  .mobile-buttons button {
+    width: 100%;
+  }
+}
+
 
 /* Hero Section */
 .hero {
@@ -349,18 +443,8 @@ a {
   }
 }
 
+
 @media (max-width: 768px) {
-  .site-header {
-    flex-direction: column;
-    padding: 15px;
-    text-align: center;
-  }
-
-  .header-buttons {
-    width: 100%;
-    justify-content: center;
-  }
-
   .features-grid {
     grid-template-columns: 1fr;
   }
@@ -377,6 +461,7 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 /* TR Rankings Contact Section */
