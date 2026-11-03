@@ -377,3 +377,60 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* TR Rankings Contact Section */
+
+.contact-section {
+  padding: 70px 20px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #12345a;
+}
+
+.contact-section p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.contact-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #12345a;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.contact-grid a span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.contact-grid a:hover {
+  color: #2563eb;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 700px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -17,10 +17,20 @@
               </div>
     </div>
 
-    <div class="header-buttons">
-      <button class="btn-login" onclick="showLoginModal()">Log in</button>
-      <button class="btn-register" onclick="showRegisterModal()">Register University</button>
-    </div>
+    
+<nav class="main-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="rankings.html">Rankings</a>
+  <a href="methodology.html">Methodology</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="header-buttons">
+  <button class="btn-login" onclick="showLoginModal()">Log in</button>
+  <button class="btn-register" onclick="showRegisterModal()">Register University</button>
+</div>
+
   </header>
 
   <main class="hero">
@@ -56,7 +66,7 @@
       </div>
     </div>
 
-    <section class="features-grid">
+    <section class="features-grid" id="features">
       <article class="feature-card">
         <div class="feature-icon">📊</div>
         <h3>Transparent Methodology</h3>
@@ -87,27 +97,38 @@
         <p class="footer-description">Empowering higher education institutions worldwide through transparent, data-driven academic benchmarking.</p>
       </div>
 
-      <div class="footer-section">
-        <h4>Navigation</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-      </div>
+<div class="footer-section">
+  <h4>Navigation</h4>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="methodology.html">Methodology</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
 
       <div class="footer-section">
         <h4>For Universities</h4>
         <ul class="footer-links">
-          <li><a href="#" onclick="showMultiStepModal()">Register Institution</a></li>
-          <li><a href="#" onclick="showMultiStepModal()">Submit Assessment Data</a></li>
+          <li>
+  <a href="#" onclick="showRegisterModal(); return false;">
+    Register Institution
+  </a>
+</li>
+
+<li>
+  <a href="#" onclick="showAssessmentModal(); return false;">
+    Submit Assessment Data
+  </a>
+</li>
         </ul>
       </div>
 
       <div class="footer-section">
         <h4>Stay Updated</h4>
         <p class="footer-description">Subscribe to receive updates prior to our launch on December 11, 2026.</p>
-        <button class="btn-gemini">Ask Gemini</button>
-      </div>
+              </div>
     </div>
   </footer>
 
@@ -235,7 +256,7 @@
 
   <script>
     // Set the launch date - December 11, 2026 at 11:00 AM
-    const launchDate = new Date('December 11, 2026 11:00:00').getTime();
+    const launchDate = new Date('2026-12-11T11:00:00+05:30').getTime();
 
     // Update the countdown every 1 second
     const countdownInterval = setInterval(function() {
@@ -257,7 +278,8 @@
       // If the countdown is finished, display a message
       if (distance < 0) {
         clearInterval(countdownInterval);
-        document.getElementById('countdown-timer').innerHTML = '<div style="font-size: 36px; font-weight: 800; color: #2165d5;">🎉 LAUNCHED! 🎉</div>';
+        document.querySelector('.countdown-timer').innerHTML =
+  '<div style="font-size: 36px; font-weight: 800; color: #2165d5;">🎉 LAUNCHED! 🎉</div>';
       }
     }, 1000);
 
@@ -332,5 +354,49 @@
     }
   </script>
 
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2>Contact TR Rankings</h2>
+    <p>Connect with our team for enquiries, rankings,
+       university submissions and partnerships.</p>
+
+    <div class="contact-grid">
+
+      <a href="mailto:info@trranking.com">
+        <strong>General Enquiries</strong>
+        <span>info@trranking.com</span>
+      </a>
+
+      <a href="mailto:rankings@trranking.com">
+        <strong>Rankings & Research</strong>
+        <span>rankings@trranking.com</span>
+      </a>
+
+      <a href="mailto:submissions@trranking.com">
+        <strong>University Submissions</strong>
+        <span>submissions@trranking.com</span>
+      </a>
+
+      <a href="mailto:partnerships@trranking.com">
+        <strong>Partnerships</strong>
+        <span>partnerships@trranking.com</span>
+      </a>
+
+      <a href="mailto:support@trranking.com">
+        <strong>Technical Support</strong>
+        <span>support@trranking.com</span>
+      </a>
+
+      <a href="mailto:admin@trranking.com">
+        <strong>Administration</strong>
+        <span>admin@trranking.com</span>
+      </a>
+
+    </div>
+  </div>
+</section>
 </body>
+
+
+
 </html>
