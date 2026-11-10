@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TR Rankings - Global University Intelligence. Launching December 11, 2026 at 11:00 AM.">
-  <title>TR Rankings - Global University Intelligence</title>
+  <title>TR Rankings</title>
   <style>
     * {
       margin: 0;
@@ -301,6 +301,136 @@
       color: #93c5fd;
     }
 
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #cbd5e1;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .modal-close:hover {
+      color: white;
+    }
+
+    .modal-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .modal-subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #cbd5e1;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 12px 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      color: white;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: #60a5fa;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+    }
+
+    .admin-login-link {
+      color: #60a5fa;
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .admin-login-link:hover {
+      color: #93c5fd;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .mobile-menu-toggle {
@@ -376,8 +506,7 @@
     <div class="nav-brand">
       <div class="logo">TR</div>
       <div class="brand">
-        <div class="brand-title">Global University Intelligence</div>
-        <div class="brand-subtitle">TR Rankings Platform</div>
+        <div class="brand-title">TR Rankings</div>
       </div>
     </div>
     <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
@@ -386,7 +515,7 @@
       <a href="about.html">About Us</a>
       <a href="methodology.html">Methodology</a>
       <a href="rankings.html">Rankings</a>
-      <a href="#contact">Contact Us</a>
+      <a href="#contact" onclick="openContact(); return false;">Contact Us</a>
     </div>
   </nav>
 
@@ -428,7 +557,7 @@
 
     <!-- DataHub Button -->
     <div class="datahub-section">
-      <a href="#datahub" class="datahub-btn" onclick="alert('DataHub form will open here!'); return false;">
+      <a href="#" class="datahub-btn">
         <span class="datahub-btn-icon">📊</span>
         Submit University Data
       </a>
@@ -440,14 +569,104 @@
     <div class="footer-content">
       <p class="footer-text">Empowering higher education institutions worldwide through transparent, data-driven academic benchmarking.</p>
       <div class="footer-links">
-        <a href="mailto:admin@trrankings.com">Contact Us</a>
+        <a href="#contact" onclick="openContact(); return false;">Contact Us</a>
         <a href="about.html">About</a>
         <a href="methodology.html">Methodology</a>
         <a href="rankings.html">Rankings</a>
       </div>
       <p class="footer-text" style="margin-top: 20px;">© 2026 TR Rankings. All rights reserved.</p>
+      <p style="margin-top: 10px;">
+        <a onclick="openAdminLogin()" class="admin-login-link">Admin Login</a>
+      </p>
     </div>
   </footer>
+
+  <!-- University Data Submission Modal -->
+  <div id="datahubModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('datahubModal')">&times;</span>
+      <h2 class="modal-title">Submit University Data</h2>
+      <p class="modal-subtitle">Your data will be sent to admin@trranking.com</p>
+      <form id="universityDataForm" onsubmit="submitUniversityData(event)">
+        <div class="form-group">
+          <label class="form-label">University Name *</label>
+          <input type="text" class="form-input" name="universityName" required placeholder="Enter university name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Contact Email *</label>
+          <input type="email" class="form-input" name="contactEmail" required placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Country *</label>
+          <input type="text" class="form-input" name="country" required placeholder="Enter country">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Data Category</label>
+          <select class="form-select" name="dataCategory">
+            <option value="research">Research Output</option>
+            <option value="teaching">Teaching Quality</option>
+            <option value="citations">Citations</option>
+            <option value="international">International Outlook</option>
+            <option value="industry">Industry Income</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Description / Additional Information</label>
+          <textarea class="form-textarea" name="description" placeholder="Describe the data you're submitting..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Submit Data</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Contact Form Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('contactModal')">&times;</span>
+      <h2 class="modal-title">Contact Us</h2>
+      <p class="modal-subtitle">Your message will be sent to admin@trranking.com</p>
+      <form id="contactForm" onsubmit="submitContactForm(event)">
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input type="text" class="form-input" name="name" required placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" class="form-input" name="email" required placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject *</label>
+          <input type="text" class="form-input" name="subject" required placeholder="Enter subject">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message *</label>
+          <textarea class="form-textarea" name="message" required placeholder="Enter your message..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Login Modal -->
+  <div id="adminModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('adminModal')">&times;</span>
+      <h2 class="modal-title">Admin Login</h2>
+      <p class="modal-subtitle">Access will redirect to Zoho Mail for admin@trranking.com</p>
+      <form id="adminLoginForm" onsubmit="submitAdminLogin(event)">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" name="email" value="admin@trranking.com" readonly>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" name="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="form-submit">Login to Zoho Mail</button>
+      </form>
+    </div>
+  </div>
 
   <script>
     // Mobile menu toggle
@@ -455,6 +674,104 @@
       const navMenu = document.getElementById('navMenu');
       navMenu.classList.toggle('show');
     }
+
+    // Modal functions
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.classList.remove('show');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Open DataHub modal
+    function openDataHub() {
+      openModal('datahubModal');
+    }
+
+    // Open Contact modal
+    function openContact() {
+      openModal('contactModal');
+    }
+
+    // Open Admin Login modal
+    function openAdminLogin() {
+      openModal('adminModal');
+    }
+
+    // Submit University Data form
+    function submitUniversityData(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+
+      const universityName = formData.get('universityName');
+      const contactEmail = formData.get('contactEmail');
+      const country = formData.get('country');
+      const dataCategory = formData.get('dataCategory');
+      const description = formData.get('description');
+
+      const subject = encodeURIComponent(`University Data Submission - ${universityName}`);
+      const body = encodeURIComponent(
+        `University Name: ${universityName}\n` +
+        `Contact Email: ${contactEmail}\n` +
+        `Country: ${country}\n` +
+        `Data Category: ${dataCategory}\n\n` +
+        `Description:\n${description}`
+      );
+
+      window.location.href = `mailto:admin@trranking.com?subject=${subject}&body=${body}`;
+      closeModal('datahubModal');
+      form.reset();
+    }
+
+    // Submit Contact form
+    function submitContactForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+
+      const mailSubject = encodeURIComponent(`Contact Form: ${subject}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Email: ${email}\n\n` +
+        `Message:\n${message}`
+      );
+
+      window.location.href = `mailto:admin@trranking.com?subject=${mailSubject}&body=${body}`;
+      closeModal('contactModal');
+      form.reset();
+    }
+
+    // Submit Admin Login form - redirects to Zoho Mail
+    function submitAdminLogin(event) {
+      event.preventDefault();
+      closeModal('adminModal');
+      window.open('https://mail.zoho.com', '_blank');
+    }
+
+    // Update Submit University Data button to open modal
+    document.querySelector('.datahub-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      openDataHub();
+    });
+
+
 
     // Set launch date - December 11, 2026 at 11:00 AM
     const launchDate = new Date('2026-12-11T11:00:00+05:30').getTime();
