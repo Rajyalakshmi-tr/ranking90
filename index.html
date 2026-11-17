@@ -562,10 +562,9 @@
     <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
     <div class="nav-menu" id="navMenu">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
       <a href="methodology.html">Methodology</a>
       <a href="rankings.html">Rankings</a>
-      <a href="#contact" onclick="openContact(); return false;">Contact Us</a>
+      <a href="about.html">About</a>
     </div>
   </nav>
 
@@ -619,10 +618,10 @@
     <div class="footer-content">
       <p class="footer-text">Empowering higher education institutions worldwide through transparent, data-driven academic benchmarking.</p>
       <div class="footer-links">
-        <a href="#contact" onclick="openContact(); return false;">Contact Us</a>
-        <a href="about.html">About</a>
+        <a href="index.html">Home</a>
         <a href="methodology.html">Methodology</a>
         <a href="rankings.html">Rankings</a>
+        <a href="about.html">About</a>
       </div>
       <div class="footer-contact-section">
         <span class="footer-contact-label">Contact Desk:</span>
@@ -673,34 +672,6 @@
           <textarea class="form-textarea" name="description" placeholder="Describe the data you're submitting..."></textarea>
         </div>
         <button type="submit" class="form-submit">Submit Data</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Contact Form Modal -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal('contactModal')">&times;</span>
-      <h2 class="modal-title">Contact Us</h2>
-      <p class="modal-subtitle">Your message will be sent to admin@trranking.com</p>
-      <form id="contactForm" onsubmit="submitContactForm(event)">
-        <div class="form-group">
-          <label class="form-label">Your Name *</label>
-          <input type="text" class="form-input" name="name" required placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address *</label>
-          <input type="email" class="form-input" name="email" required placeholder="Enter your email">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Subject *</label>
-          <input type="text" class="form-input" name="subject" required placeholder="Enter subject">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message *</label>
-          <textarea class="form-textarea" name="message" required placeholder="Enter your message..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send Message</button>
       </form>
     </div>
   </div>
@@ -756,11 +727,6 @@
       openModal('datahubModal');
     }
 
-    // Open Contact modal
-    function openContact() {
-      openModal('contactModal');
-    }
-
     // Open Admin Login modal
     function openAdminLogin() {
       openModal('adminModal');
@@ -789,29 +755,6 @@
 
       window.location.href = `mailto:admin@trranking.com?subject=${subject}&body=${body}`;
       closeModal('datahubModal');
-      form.reset();
-    }
-
-    // Submit Contact form
-    function submitContactForm(event) {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const subject = formData.get('subject');
-      const message = formData.get('message');
-
-      const mailSubject = encodeURIComponent(`Contact Form: ${subject}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\n` +
-        `Email: ${email}\n\n` +
-        `Message:\n${message}`
-      );
-
-      window.location.href = `mailto:admin@trranking.com?subject=${mailSubject}&body=${body}`;
-      closeModal('contactModal');
       form.reset();
     }
 
