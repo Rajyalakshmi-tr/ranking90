@@ -359,64 +359,7 @@
       font-size: 14px;
       color: #94a3b8;
       text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .form-group {
       margin-bottom: 20px;
-    }
-
-    .form-label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #cbd5e1;
-    }
-
-    .form-input,
-    .form-textarea,
-    .form-select {
-      width: 100%;
-      padding: 12px 15px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      color: white;
-      font-size: 14px;
-      transition: all 0.3s;
-    }
-
-    .form-input:focus,
-    .form-textarea:focus,
-    .form-select:focus {
-      outline: none;
-      border-color: #60a5fa;
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .form-textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    .form-submit {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-    }
-
-    .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
     }
 
     .admin-login-link {
@@ -639,40 +582,20 @@
 
   <!-- University Data Submission Modal -->
   <div id="datahubModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" style="max-width: 800px; width: 95%;">
       <span class="modal-close" onclick="closeModal('datahubModal')">&times;</span>
       <h2 class="modal-title">Submit University Data</h2>
       <p class="modal-subtitle">Your data will be sent to admin@trranking.com</p>
-      <form id="universityDataForm" onsubmit="submitUniversityData(event)">
-        <div class="form-group">
-          <label class="form-label">University Name *</label>
-          <input type="text" class="form-input" name="universityName" required placeholder="Enter university name">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Contact Email *</label>
-          <input type="email" class="form-input" name="contactEmail" required placeholder="Enter your email">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Country *</label>
-          <input type="text" class="form-input" name="country" required placeholder="Enter country">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Data Category</label>
-          <select class="form-select" name="dataCategory">
-            <option value="research">Research Output</option>
-            <option value="teaching">Teaching Quality</option>
-            <option value="citations">Citations</option>
-            <option value="international">International Outlook</option>
-            <option value="industry">Industry Income</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Description / Additional Information</label>
-          <textarea class="form-textarea" name="description" placeholder="Describe the data you're submitting..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Submit Data</button>
-      </form>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeQ7PW5vBVmZB2wKFaiojemPACR5iPi24cwiL3p6nIOecWN6w/viewform?embedded=true"
+        width="100%"
+        height="700"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        style="border-radius: 10px;">
+        Loading...
+      </iframe>
     </div>
   </div>
 
@@ -730,32 +653,6 @@
     // Open Admin Login modal
     function openAdminLogin() {
       openModal('adminModal');
-    }
-
-    // Submit University Data form
-    function submitUniversityData(event) {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-
-      const universityName = formData.get('universityName');
-      const contactEmail = formData.get('contactEmail');
-      const country = formData.get('country');
-      const dataCategory = formData.get('dataCategory');
-      const description = formData.get('description');
-
-      const subject = encodeURIComponent(`University Data Submission - ${universityName}`);
-      const body = encodeURIComponent(
-        `University Name: ${universityName}\n` +
-        `Contact Email: ${contactEmail}\n` +
-        `Country: ${country}\n` +
-        `Data Category: ${dataCategory}\n\n` +
-        `Description:\n${description}`
-      );
-
-      window.location.href = `mailto:admin@trranking.com?subject=${subject}&body=${body}`;
-      closeModal('datahubModal');
-      form.reset();
     }
 
     // Submit Admin Login form - redirects to Zoho Mail
